@@ -1,6 +1,6 @@
 import streamlit as st
 from random import randint as rng
-from Defs.Defs import hitungmotor, hitungmobil, karcis
+from Defs.Defs import hitungbiaya, karcis
 from Data.History import gethistory, historypage
 
 st.title("Karcis Parkiran Digital")
@@ -38,7 +38,7 @@ if halaman == "Karcis":
     if st.button("Hitung Biaya"):
         karcisid = rng(1000, 9999)
         karcis(karcisid, jenis, platno, jammasuk, jamkeluar)
-        totalharga = hitungmotor(jenis, jammasuk, jamkeluar)
+        totalharga = hitungbiaya(jenis, jammasuk, jamkeluar)
         gethistory(karcisid, jenis, platno, jammasuk, jamkeluar, totalharga)
         st.success("Karcis Telah Disimpan ke History!")
 
