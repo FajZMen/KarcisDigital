@@ -37,14 +37,9 @@ if halaman == "Karcis":
 
     if st.button("Hitung Biaya"):
         karcisid = rng(1000, 9999)
-        if jenis == "Motor":
-            karcis(karcisid, jenis, platno, jammasuk, jamkeluar)
-            totalharga = hitungmotor(jammasuk, jamkeluar)
-            gethistory(karcisid, jenis, platno, jammasuk, jamkeluar, totalharga)
-        elif jenis == "Mobil":
-            karcis(karcisid, jenis, platno, jammasuk, jamkeluar)
-            totalharga = hitungmobil(jammasuk, jamkeluar)
-            gethistory(karcisid, jenis, platno, jammasuk, jamkeluar, totalharga)
+        karcis(karcisid, jenis, platno, jammasuk, jamkeluar)
+        totalharga = hitungmotor(jenis, jammasuk, jamkeluar)
+        gethistory(karcisid, jenis, platno, jammasuk, jamkeluar, totalharga)
         st.success("Karcis Telah Disimpan ke History!")
 
 elif halaman == "Histori Karcis":
