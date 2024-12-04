@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 
-def hitungmotor(jenis, jammasuk, jamkeluar):
+def hitungbiaya(jenis, jammasuk, jamkeluar):
     durasi = (jamkeluar - jammasuk)
     
     if durasi <= 1:
