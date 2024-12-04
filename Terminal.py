@@ -32,8 +32,8 @@ if halaman == "Karcis":
         st.write("")
 
     platno = st.text_input("Masukkan Plat Nomor Kendaraan: ")
-    jammasuk = st.time_input("Jam Masuk: ")
-    jamkeluar = st.time_input("Jam Keluar: ")
+    jammasuk = st.number_input("Jam Masuk: ")
+    jamkeluar = st.number_input("Jam Keluar: ")
 
     if st.button("Hitung Biaya"):
         karcisid = rng(1000, 9999)
