@@ -1,31 +1,30 @@
 import streamlit as st
 from datetime import datetime
 
-def hitungmotor(jammasuk, jamkeluar):
-    masuk = datetime.combine(datetime.today(), jammasuk)
-    keluar = datetime.combine(datetime.today(), jamkeluar)
-    durasi = (keluar - masuk).total_seconds() / 3600
+def hitungmotor(jenis, jammasuk, jamkeluar):
+    durasi = (jamkeluar - jammasuk)
     
     if durasi <= 1:
-        harga = 3000
+        if jenis == "Motor":
+            harga = 3000
+        elif jenis == "Mobil":
+            harga = 4000
+        else:
+            harga = "Unknown"
     elif durasi <= 2:
-        harga = 4000
+        if jenis == "Motor":
+            harga = 4000
+        elif jenis == "Mobil":
+            harga = 5000
+        else:
+            harga = "Unknown"
     else:
-        harga = 5000
-    st.write(f"Total Biaya: {harga} Rp.")
-    return harga
-
-def hitungmobil(jammasuk, jamkeluar):
-    masuk = datetime.combine(datetime.today(), jammasuk)
-    keluar = datetime.combine(datetime.today(), jamkeluar)
-    durasi = (keluar - masuk).total_seconds() / 3600
-    
-    if durasi <= 1:
-        harga = 4000
-    elif durasi <= 2:
-        harga = 5000
-    else:
-        harga = 6000
+        if jenis == "Motor":
+            harga = 5000
+        elif jenis == "Mobil":
+            harga = 6000
+        else:
+            harga = "Unknown"
     st.write(f"Total Biaya: {harga} Rp.")
     return harga
 
